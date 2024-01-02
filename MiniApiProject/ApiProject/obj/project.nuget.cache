@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3V9ArTZg7DLAhLnv+meB3YqHqDSa1w0UJz/tGEJDe1kNAYxhOxYokbJp9PQpLGkkbmlWRQ7udiXNDCVxNbVpvA==",
+  "dgSpecHash": "1Vn2vAumwWCrcUwPC4qu7BTZuMLo52S7uvrjyO3zUL3CXIzPAMN6kPMwTaDMeVqo0pkQsauWUG8OXZX9Gps4sA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MiniApiProject\\ApiProject\\ApiProject.csproj",
+  "projectFilePath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject\\ApiProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\elvin\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\elvin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

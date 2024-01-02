@@ -22,6 +22,35 @@ namespace ApiProject.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("ApiProject.Core.Entites.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
             modelBuilder.Entity("ApiProject.Core.Entites.Feature", b =>
                 {
                     b.Property<int>("Id")
@@ -60,6 +89,78 @@ namespace ApiProject.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Features");
+                });
+
+            modelBuilder.Entity("ApiProject.Core.Entites.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ImgUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("PortfolioId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PortfolioId");
+
+                    b.ToTable("Images");
+                });
+
+            modelBuilder.Entity("ApiProject.Core.Entites.Portfolio", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DetailUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Portfolios");
                 });
 
             modelBuilder.Entity("ApiProject.Core.Entites.Profession", b =>
@@ -133,6 +234,28 @@ namespace ApiProject.Data.Migrations
                     b.ToTable("Workers");
                 });
 
+            modelBuilder.Entity("ApiProject.Core.Entites.Image", b =>
+                {
+                    b.HasOne("ApiProject.Core.Entites.Portfolio", "Portfolio")
+                        .WithMany("Images")
+                        .HasForeignKey("PortfolioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Portfolio");
+                });
+
+            modelBuilder.Entity("ApiProject.Core.Entites.Portfolio", b =>
+                {
+                    b.HasOne("ApiProject.Core.Entites.Category", "Category")
+                        .WithMany("Portfolios")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("ApiProject.Core.Entites.Worker", b =>
                 {
                     b.HasOne("ApiProject.Core.Entites.Profession", "Profession")
@@ -142,6 +265,16 @@ namespace ApiProject.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Profession");
+                });
+
+            modelBuilder.Entity("ApiProject.Core.Entites.Category", b =>
+                {
+                    b.Navigation("Portfolios");
+                });
+
+            modelBuilder.Entity("ApiProject.Core.Entites.Portfolio", b =>
+                {
+                    b.Navigation("Images");
                 });
 
             modelBuilder.Entity("ApiProject.Core.Entites.Profession", b =>

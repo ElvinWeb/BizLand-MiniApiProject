@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DSuQCGklutUz1jJ7sponqAHlBKzBrVW53ooDZ+J6oEQdx5VWg4qmRCL18Bi5KbBiPn/w1OAW279ix7ZmxsAr6Q==",
+  "dgSpecHash": "s59AEaTsRNQTMHNE4sfsm5aGDN4GgIKq6kL0wNamAPEctUnftRp2nCSNp3xgZPRWF7qoQK4b/wua3O+N/fBDTw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MiniApiProject\\ApiProject.Core\\ApiProject.Core.csproj",
+  "projectFilePath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject.Core\\ApiProject.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\elvin\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\elvin\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.14\\microsoft.entityframeworkcore.7.0.14.nupkg.sha512",

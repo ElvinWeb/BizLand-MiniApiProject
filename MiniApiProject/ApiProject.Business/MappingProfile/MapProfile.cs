@@ -16,7 +16,7 @@ namespace ApiProject.Business.MappingProfile
     {
         public MapProfile()
         {
-            CreateMap<WorkerCreateDTO, Worker>().ReverseMap();
+            CreateMap<WorkerCreateDto, Worker>().ReverseMap();
             CreateMap<WorkerGetDto, Worker>().ReverseMap();
             CreateMap<WorkerUpdateDto, Worker>().ReverseMap();
 

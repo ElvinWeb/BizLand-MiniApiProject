@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MiniApiProject\\ApiProject.Core\\ApiProject.Core.csproj": {}
+    "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject.Core\\ApiProject.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MiniApiProject\\ApiProject.Core\\ApiProject.Core.csproj": {
+    "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject.Core\\ApiProject.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MiniApiProject\\ApiProject.Core\\ApiProject.Core.csproj",
+        "projectUniqueName": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject.Core\\ApiProject.Core.csproj",
         "projectName": "ApiProject.Core",
-        "projectPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MiniApiProject\\ApiProject.Core\\ApiProject.Core.csproj",
+        "projectPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject.Core\\ApiProject.Core.csproj",
         "packagesPath": "C:\\Users\\elvin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MiniApiProject\\ApiProject.Core\\obj\\",
+        "outputPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\elvin\\AppData\\Roaming\\NuGet\\NuGet.Config",

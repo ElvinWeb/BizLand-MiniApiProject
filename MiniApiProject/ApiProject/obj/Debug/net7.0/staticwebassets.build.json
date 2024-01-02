@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Z6EDVaMtfHvBZkrkWEM2/E4RI/YMmchGdRr3+ceG4II=",
+  "Hash": "GTIG/uQbjT904Dgnjf0X2ROWTeK6wQ6BdBeWVA9B/ek=",
   "Source": "ApiProject",
   "BasePath": "_content/ApiProject",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "ApiProject\\wwwroot",
       "Source": "ApiProject",
-      "ContentRoot": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MiniApiProject\\ApiProject\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject\\wwwroot\\",
       "BasePath": "_content/ApiProject",
       "Pattern": "**"
     }

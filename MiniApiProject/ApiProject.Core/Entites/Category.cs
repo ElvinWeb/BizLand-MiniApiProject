@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace ApiProject.Core.Entites
 {
-    public class Category  : BaseEntity
+    public class Category : BaseEntity
     {
         public string Name { get; set; }
+        public List<Portfolio> Portfolios { get; set; }
     }
 }

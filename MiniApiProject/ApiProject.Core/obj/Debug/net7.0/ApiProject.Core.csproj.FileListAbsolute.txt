@@ -10,3 +10,15 @@ C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\Api
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Core\obj\Debug\net7.0\refint\ApiProject.Core.dll
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Core\obj\Debug\net7.0\ApiProject.Core.pdb
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Core\obj\Debug\net7.0\ref\ApiProject.Core.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BizLandApi\MiniApiProject\ApiProject.Core\bin\Debug\net7.0\ApiProject.Core.deps.json
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BizLandApi\MiniApiProject\ApiProject.Core\bin\Debug\net7.0\ApiProject.Core.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BizLandApi\MiniApiProject\ApiProject.Core\bin\Debug\net7.0\ApiProject.Core.pdb
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BizLandApi\MiniApiProject\ApiProject.Core\obj\Debug\net7.0\ApiProject.Core.csproj.AssemblyReference.cache
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BizLandApi\MiniApiProject\ApiProject.Core\obj\Debug\net7.0\ApiProject.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BizLandApi\MiniApiProject\ApiProject.Core\obj\Debug\net7.0\ApiProject.Core.AssemblyInfoInputs.cache
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BizLandApi\MiniApiProject\ApiProject.Core\obj\Debug\net7.0\ApiProject.Core.AssemblyInfo.cs
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BizLandApi\MiniApiProject\ApiProject.Core\obj\Debug\net7.0\ApiProject.Core.csproj.CoreCompileInputs.cache
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BizLandApi\MiniApiProject\ApiProject.Core\obj\Debug\net7.0\ApiProject.Core.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BizLandApi\MiniApiProject\ApiProject.Core\obj\Debug\net7.0\refint\ApiProject.Core.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BizLandApi\MiniApiProject\ApiProject.Core\obj\Debug\net7.0\ApiProject.Core.pdb
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BizLandApi\MiniApiProject\ApiProject.Core\obj\Debug\net7.0\ref\ApiProject.Core.dll

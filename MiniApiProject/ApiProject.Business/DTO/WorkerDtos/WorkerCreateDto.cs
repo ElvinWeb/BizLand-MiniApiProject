@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ApiProject.Business.DTO.WorkerDtos
 {
-    public class WorkerCreateDTO
+    public class WorkerCreateDto
     {
         public string FullName { get; set; }
         public string Description { get; set; }

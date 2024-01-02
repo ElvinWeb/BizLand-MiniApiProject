@@ -12,7 +12,7 @@ namespace ApiProject.Business.Services
 {
     public interface IWorkerService
     {
-        Task CreateAsync([FromForm] WorkerCreateDTO workerCreateDTO);
+        Task CreateAsync([FromForm] WorkerCreateDto workerCreateDto);
         Task UpdateAsync([FromForm] WorkerUpdateDto workerUpdateDto);
         Task DeleteAsync(int id);
         Task ToggleDelete(int id);

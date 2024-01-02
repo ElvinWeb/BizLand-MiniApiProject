@@ -1572,7 +1572,10 @@
         },
         "runtime": {
           "bin/placeholder/ApiProject.Business.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "ApiProject.Core/1.0.0": {
         "type": "project",
@@ -4132,11 +4135,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MiniApiProject\\ApiProject\\ApiProject.csproj",
+      "projectUniqueName": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject\\ApiProject.csproj",
       "projectName": "ApiProject",
-      "projectPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MiniApiProject\\ApiProject\\ApiProject.csproj",
+      "projectPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject\\ApiProject.csproj",
       "packagesPath": "C:\\Users\\elvin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MiniApiProject\\ApiProject\\obj\\",
+      "outputPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\elvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4153,8 +4156,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MiniApiProject\\ApiProject.Business\\ApiProject.Business.csproj": {
-              "projectPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MiniApiProject\\ApiProject.Business\\ApiProject.Business.csproj"
+            "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject.Business\\ApiProject.Business.csproj": {
+              "projectPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject.Business\\ApiProject.Business.csproj"
             }
           }
         }
