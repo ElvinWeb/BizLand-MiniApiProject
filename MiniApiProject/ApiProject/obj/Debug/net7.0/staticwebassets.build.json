@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "Z6EDVaMtfHvBZkrkWEM2/E4RI/YMmchGdRr3+ceG4II=",
+  "Source": "ApiProject",
+  "BasePath": "_content/ApiProject",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ApiProject\\wwwroot",
+      "Source": "ApiProject",
+      "ContentRoot": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\MiniApiProject\\ApiProject\\wwwroot\\",
+      "BasePath": "_content/ApiProject",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

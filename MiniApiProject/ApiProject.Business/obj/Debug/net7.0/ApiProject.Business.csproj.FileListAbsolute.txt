@@ -1,0 +1,17 @@
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Business\bin\Debug\net7.0\ApiProject.Business.deps.json
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Business\bin\Debug\net7.0\ApiProject.Business.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Business\bin\Debug\net7.0\ApiProject.Business.pdb
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Business\bin\Debug\net7.0\ApiProject.Core.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Business\bin\Debug\net7.0\ApiProject.Data.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Business\bin\Debug\net7.0\ApiProject.Data.pdb
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Business\bin\Debug\net7.0\ApiProject.Core.pdb
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Business\obj\Debug\net7.0\ApiProject.Business.csproj.AssemblyReference.cache
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Business\obj\Debug\net7.0\ApiProject.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Business\obj\Debug\net7.0\ApiProject.Business.AssemblyInfoInputs.cache
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Business\obj\Debug\net7.0\ApiProject.Business.AssemblyInfo.cs
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Business\obj\Debug\net7.0\ApiProject.Business.csproj.CoreCompileInputs.cache
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Business\obj\Debug\net7.0\ApiProject.Business.csproj.CopyComplete
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Business\obj\Debug\net7.0\ApiProject.Business.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Business\obj\Debug\net7.0\refint\ApiProject.Business.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Business\obj\Debug\net7.0\ApiProject.Business.pdb
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\MiniApiProject\ApiProject.Business\obj\Debug\net7.0\ref\ApiProject.Business.dll
