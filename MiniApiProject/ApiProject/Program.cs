@@ -1,10 +1,13 @@
 using ApiProject.Business.MappingProfile;
 using ApiProject.Business.Services;
 using ApiProject.Business.Services.Implementations;
+using ApiProject.Core.Entites;
 using ApiProject.Core.Repositories;
 using ApiProject.Data.DataAccessLayer;
 using ApiProject.Data.Repositories.Implementations;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +40,18 @@ builder.Services.AddScoped<IPortfolioService, PortfolioService>();
 
 builder.Services.AddScoped<IPortfolioImageRepository, PortfolioImageRepository>();
 
+builder.Services.AddIdentity<User, IdentityRole>(opt =>
+{
+    opt.Password.RequiredUniqueChars = 0;
+    opt.Password.RequireNonAlphanumeric = true;
+    opt.Password.RequireNonAlphanumeric = true;
+    opt.Password.RequiredLength = 8;
+    opt.Password.RequireDigit = true;
+
+
+    opt.User.RequireUniqueEmail = false;
+}).AddEntityFrameworkStores<ProjectDbContext>().AddDefaultTokenProviders();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -48,6 +63,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

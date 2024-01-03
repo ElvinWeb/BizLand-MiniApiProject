@@ -28,6 +28,15 @@ namespace ApiProject.Controllers
 
             PortfolioGetDto portfolioGetDto = null;
 
+            try
+            {
+                portfolioGetDto = await _portfolioService.GetByIdAsync(id);
+
+            }
+            catch (NullReferenceException ex)
+            {
+                return NotFound(ex.Message);
+            }
 
             return Ok(portfolioGetDto);
         }
@@ -58,6 +67,67 @@ namespace ApiProject.Controllers
             }
 
             return StatusCode(201, new { message = "Object yaradildi" });
+        }
+
+        [HttpPut("")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public async Task<IActionResult> Update([FromForm] PortfolioUpdateDto portfolioUpdateDto)
+        {
+            if (portfolioUpdateDto.Id == null && portfolioUpdateDto.Id <= 0) return NotFound();
+
+            try
+            {
+                await _portfolioService.UpdateAsync(portfolioUpdateDto);
+
+            }
+            catch (InvalidImageContentTypeOrSize ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (NullReferenceException ex)
+            {
+                return NotFound(ex.Message);
+            }
+
+            return NoContent();
+        }
+        [HttpDelete("/portfolios/Delete/{id}")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (id == null && id <= 0) return NotFound();
+
+            try
+            {
+                await _portfolioService.DeleteAsync(id);
+
+            }
+            catch (NullReferenceException ex)
+            {
+                return NotFound(ex.Message);
+            }
+
+            return NoContent();
+        }
+        [HttpPatch("/portfolios/ToggleDelete/{id}")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public async Task<IActionResult> ToggleDelete(int id)
+        {
+            if (id == null && id <= 0) return NotFound();
+
+            try
+            {
+                await _portfolioService.ToggleDelete(id);
+            }
+            catch (NullReferenceException ex)
+            {
+                return NotFound(ex.Message);
+            }
+
+            return NoContent();
         }
     }
 }

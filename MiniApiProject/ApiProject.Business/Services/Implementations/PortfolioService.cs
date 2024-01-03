@@ -9,6 +9,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -97,24 +98,49 @@ namespace ApiProject.Business.Services.Implementations
             await _portfolioRepository.SaveChanges();
         }
 
-        public Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            Portfolio portfolio = await _portfolioRepository.GetByIdAsync(portfolio => portfolio.Id == id, "PortfolioImage");
+
+            if (portfolio == null) throw new NullReferenceException("portfolio couldn't be null!");
+
+            if (portfolio.Images != null)
+            {
+                foreach (var image in portfolio.Images)
+                {
+                    string folder = "Uploads/PortfolioImages";
+
+                    if (image.IsPoster == false || image.IsPoster == true)
+                    {
+                        string path = Path.Combine(_env.WebRootPath, folder, image.ImgUrl);
+
+                        if (File.Exists(path))
+                        {
+                            File.Delete(path);
+                        }
+                    }
+
+                }
+            }
+
+            _portfolioRepository.Delete(portfolio);
+            await _portfolioRepository.SaveChanges();
         }
 
         public async Task<IEnumerable<PortfolioGetDto>> GetAllAsync()
         {
-            IEnumerable<Portfolio> portfolios = await _portfolioRepository.GetAllAsync(portfolio => portfolio.IsDeleted == false, "Category");
+            IEnumerable<Portfolio> portfolios = await _portfolioRepository.GetAllAsync(portfolio => portfolio.IsDeleted == false, "Category", "Images");
 
             IEnumerable<PortfolioGetDto> workerGetDtos = portfolios.Select(portfolio => new PortfolioGetDto
             {
                 Id = portfolio.Id,
-                Category = portfolio.Category.Name,
-                Client = portfolio.Client,
                 Title = portfolio.Title,
                 Description = portfolio.Description,
+                Category = portfolio.Category.Name,
+                Client = portfolio.Client,
                 ProjectDate = portfolio.ProjectDate,
-                ProjectUrl = portfolio.ProjectUrl
+                ProjectUrl = portfolio.ProjectUrl,
+                ImgUrl = portfolio.Images.FirstOrDefault(image => image.IsPoster == true).ImgUrl,
             });
 
             return workerGetDtos;
@@ -122,24 +148,114 @@ namespace ApiProject.Business.Services.Implementations
 
         public async Task<PortfolioGetDto> GetByIdAsync(int id)
         {
-            Portfolio portfolio = await _portfolioRepository.GetByIdAsync(portfolio => portfolio.Id == id, "Category");
+            Portfolio portfolio = await _portfolioRepository.GetByIdAsync(portfolio => portfolio.Id == id, "Category", "Images");
 
             if (portfolio == null) throw new NullReferenceException("portfolio couldn't be null!");
 
             PortfolioGetDto portfolioGetDto = _mapper.Map<PortfolioGetDto>(portfolio);
             portfolioGetDto.Category = portfolio.Category.Name;
+            portfolioGetDto.ImgUrl = portfolio.Images.FirstOrDefault(image => image.IsPoster == true).ImgUrl;
 
             return portfolioGetDto;
         }
 
-        public Task ToggleDelete(int id)
+        public async Task ToggleDelete(int id)
         {
-            throw new NotImplementedException();
+            Portfolio portfolio = await _portfolioRepository.GetByIdAsync(portfolio => portfolio.Id == id, "Category");
+
+            if (portfolio == null) throw new NullReferenceException("portfolio couldn't be null!");
+
+            portfolio.IsDeleted = !portfolio.IsDeleted;
+            portfolio.DeletedDate = DateTime.UtcNow.AddHours(4);
+
+            await _portfolioRepository.SaveChanges();
         }
 
-        public Task UpdateAsync([FromForm] PortfolioUpdateDto portfolioUpdateDto)
+        public async Task UpdateAsync([FromForm] PortfolioUpdateDto portfolioUpdateDto)
         {
-            throw new NotImplementedException();
+            Portfolio portfolio = await _portfolioRepository.GetByIdAsync(portfolio => portfolio.Id == portfolioUpdateDto.Id, "Images");
+
+            if (portfolio == null) throw new NullReferenceException("portfolio couldn't be null!");
+
+            if (portfolioUpdateDto.PortfolioItemImage != null)
+            {
+                portfolio.Images.RemoveAll(pi => !portfolio.PortfolioImageIds.Contains(pi.Id) && pi.IsPoster == true);
+                if (portfolioUpdateDto.PortfolioItemImage.ContentType != "image/png" && portfolioUpdateDto.PortfolioItemImage.ContentType != "image/jpeg")
+                {
+                    throw new InvalidImageContentTypeOrSize("enter the correct image ContentType!");
+                }
+
+                if (portfolioUpdateDto.PortfolioItemImage.Length > 1048576)
+                {
+                    throw new InvalidImageContentTypeOrSize("image size must be less than 1mb!");
+                }
+
+                string folder = "Uploads/PortfolioImages";
+                string newFileName = await Helper.GetFileName(_env.WebRootPath, folder, portfolioUpdateDto.PortfolioItemImage);
+
+                string oldImgPath = Path.Combine(_env.WebRootPath, folder, portfolio.Images.FirstOrDefault(img => img.IsPoster == true).ImgUrl);
+
+                if (File.Exists(oldImgPath))
+                {
+                    File.Delete(oldImgPath);
+                }
+
+                PortfolioImage portfolioImage = new PortfolioImage
+                {
+                    Portfolio = portfolio,
+                    ImgUrl = newFileName,
+                    IsPoster = true,
+                };
+
+                await _portfolioImage.CreateAsync(portfolioImage);
+            }
+
+
+            if (portfolioUpdateDto.PortfolioSlideImages != null)
+            {
+                foreach (var img in portfolioUpdateDto.PortfolioSlideImages)
+                {
+                    portfolio.Images.RemoveAll(pi => !portfolio.PortfolioImageIds.Contains(pi.Id) && pi.IsPoster == false);
+
+                    if (img.ContentType != "image/png" && img.ContentType != "image/jpeg")
+                    {
+                        throw new InvalidImageContentTypeOrSize("enter the correct image ContentType!");
+                    }
+
+                    if (img.Length > 1048576)
+                    {
+                        throw new InvalidImageContentTypeOrSize("image size must be less than 1mb!");
+                    }
+                    string folder = "Uploads/PortfolioImages";
+                    string newFileName = await Helper.GetFileName(_env.WebRootPath, folder, img);
+
+                    if (portfolio.Images != null)
+                    {
+                        foreach (var portfolioImg in portfolio.Images.FindAll(img => img.IsPoster == false))
+                        {
+                            string oldImgPath = Path.Combine(_env.WebRootPath, folder, portfolioImg.ImgUrl);
+
+                            if (File.Exists(oldImgPath))
+                            {
+                                File.Delete(oldImgPath);
+                            }
+                        }
+                    }
+
+                    PortfolioImage portfolioImage = new PortfolioImage
+                    {
+                        Portfolio = portfolio,
+                        ImgUrl = newFileName,
+                        IsPoster = false,
+                    };
+
+                    await _portfolioImage.CreateAsync(portfolioImage);
+                }
+            }
+
+            portfolio = _mapper.Map(portfolioUpdateDto, portfolio);
+
+            await _portfolioRepository.SaveChanges();
         }
     }
 }

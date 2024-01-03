@@ -21,6 +21,9 @@ namespace ApiProject.Core.Entites
         [NotMapped]
         public List<IFormFile> PortfolioImages { get; set; }
         [NotMapped]
+
         public IFormFile PortfolioItemImage { get; set; }
+        [NotMapped]
+        public List<int>? PortfolioImageIds { get; set; }
     }
 }
