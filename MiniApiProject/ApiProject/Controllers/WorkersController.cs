@@ -110,7 +110,7 @@ namespace ApiProject.Controllers
 
             return NoContent();
         }
-        [HttpDelete("/workers/ToggleDelete/{id}")]
+        [HttpPatch("/workers/ToggleDelete/{id}")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> ToggleDelete(int id)

@@ -13,7 +13,7 @@ namespace ApiProject.Business.DTO.PortfolioDtos
         public string Description { get; set; }
         public string ProjectUrl { get; set; }
         public string Client { get; set; }
-        public DateTime ProjectDate { get; set; }
+        public string ProjectDate { get; set; }
         public string Category { get; set; }
         public string ImgUrl { get; set; }  
     }

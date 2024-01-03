@@ -35,6 +35,8 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IPortfolioRepository, PortfolioRepository>();
 builder.Services.AddScoped<IPortfolioService, PortfolioService>();
 
+builder.Services.AddScoped<IPortfolioImageRepository, PortfolioImageRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

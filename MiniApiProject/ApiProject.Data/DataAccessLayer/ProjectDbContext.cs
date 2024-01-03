@@ -17,8 +17,8 @@ namespace ApiProject.Data.DataAccessLayer
         public DbSet<Profession> Professions { get; set; }
         public DbSet<Worker> Workers { get; set; }
         public DbSet<Portfolio> Portfolios { get; set; }
+        public DbSet<PortfolioImage> PortfolioImages { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Image> Images { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

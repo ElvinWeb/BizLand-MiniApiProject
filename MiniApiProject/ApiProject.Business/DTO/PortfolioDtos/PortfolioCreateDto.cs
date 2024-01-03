@@ -15,8 +15,9 @@ namespace ApiProject.Business.DTO.PortfolioDtos
         public string Description { get; set; }
         public string ProjectUrl { get; set; }
         public string Client { get; set; }
-        public DateTime ProjectDate { get; set; }
+        public string ProjectDate { get; set; }
         public int CategoryId { get; set; }
-        public List<IFormFile> PortfolioImages { get; set; }
+        public List<IFormFile> PortfolioSlideImages { get; set; }
+        public IFormFile PortfolioItemImage { get; set; }
     }
 }

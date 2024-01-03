@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject\\wwwroot\\Uploads\\PortfolioImages\\3afb68ca-3485-4059-a191-bf2e37a5e714portfolio-3.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\PortfolioImages\\3afb68ca-3485-4059-a191-bf2e37a5e714portfolio-3.jpg"
+    },
+    {
       "Id": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject\\wwwroot\\Uploads\\WorkerImages\\1b241795-5803-4c2f-8460-6bcce9d9a01bteam-2.jpg",
       "PackagePath": "staticwebassets\\Uploads\\WorkerImages\\1b241795-5803-4c2f-8460-6bcce9d9a01bteam-2.jpg"
     },
