@@ -79,18 +79,19 @@ namespace ApiProject.Business.Services.Implementations
         {
             IEnumerable<Worker> workers = await _workerRepository.GetAllAsync(worker => worker.IsDeleted == false, "Profession");
 
-            IEnumerable<WorkerGetDto> workerGetDtos = workers.Select(worker => new WorkerGetDto { FullName = worker.FullName, ImgUrl = worker.ImgUrl, Profession = worker.Profession.Name, MediaUrl = worker.MediaUrl });
+            IEnumerable<WorkerGetDto> workerGetDtos = workers.Select(worker => new WorkerGetDto { FullName = worker.FullName, ImgUrl = worker.ImgUrl, Profession = worker.Profession.Name, MediaUrl = worker.MediaUrl, Id = worker.Id });
 
             return workerGetDtos;
         }
 
         public async Task<WorkerGetDto> GetByIdAsync(int id)
         {
-            Worker worker = await _workerRepository.GetByIdAsync(worker => worker.Id == id && worker.IsDeleted == false);
+            Worker worker = await _workerRepository.GetByIdAsync(worker => worker.Id == id, "Profession");
 
             if (worker == null) throw new NullReferenceException("worker couldn't be null!");
 
             WorkerGetDto workerGetDto = _mapper.Map<WorkerGetDto>(worker);
+            workerGetDto.Profession = worker.Profession.Name;
 
             return workerGetDto;
         }

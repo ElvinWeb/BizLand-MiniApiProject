@@ -48,7 +48,7 @@ namespace ApiProject.Business.Services.Implementations
 
             if (features == null) throw new NullReferenceException("features couldn't be null!");
 
-            IEnumerable<FeatureGetDto> featureGetDtos = features.Select(feature => new FeatureGetDto { Description = feature.Description, Title = feature.Title });
+            IEnumerable<FeatureGetDto> featureGetDtos = features.Select(feature => new FeatureGetDto { Description = feature.Description, Title = feature.Title, Id = feature.Id, Icon = feature.Icon });
 
             return featureGetDtos;
         }

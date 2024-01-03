@@ -8,5 +8,6 @@ namespace ApiProject.Business.DTO.CategoryDtos
 {
     public class CategoryCreateDto
     {
+        public string Name { get; set; }
     }
 }

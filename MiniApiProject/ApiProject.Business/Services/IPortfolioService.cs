@@ -15,7 +15,7 @@ namespace ApiProject.Business.Services
         Task UpdateAsync([FromForm] PortfolioUpdateDto portfolioUpdateDto);
         Task DeleteAsync(int id);
         Task ToggleDelete(int id);
-        Task<PortfolioUpdateDto> GetByIdAsync(int id);
-        Task<IEnumerable<PortfolioUpdateDto>> GetAllAsync();
+        Task<PortfolioGetDto> GetByIdAsync(int id);
+        Task<IEnumerable<PortfolioGetDto>> GetAllAsync();
     }
 }

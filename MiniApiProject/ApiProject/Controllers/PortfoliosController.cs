@@ -7,5 +7,6 @@ namespace ApiProject.Controllers
     [ApiController]
     public class PortfoliosController : ControllerBase
     {
+
     }
 }

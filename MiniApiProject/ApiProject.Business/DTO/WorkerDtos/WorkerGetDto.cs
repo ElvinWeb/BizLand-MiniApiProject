@@ -8,6 +8,7 @@ namespace ApiProject.Business.DTO.WorkerDtos
 {
     public class WorkerGetDto
     {
+        public int Id { get; set; }
         public string FullName { get; set; }
         public string MediaUrl { get; set; }
         public string Profession { get; set; }

@@ -49,14 +49,14 @@ namespace ApiProject.Business.Services.Implementations
 
             if (professions == null) throw new NullReferenceException("professions couldn't be null!");
 
-            IEnumerable<ProfessionGetDto> professionGetDtos = professions.Select(profession => new ProfessionGetDto { Name = profession.Name });
+            IEnumerable<ProfessionGetDto> professionGetDtos = professions.Select(profession => new ProfessionGetDto { Name = profession.Name, Id = profession.Id });
 
             return professionGetDtos;
         }
 
         public async Task<ProfessionGetDto> GetByIdAsync(int id)
         {
-            Profession profession = await _professionRepository.GetByIdAsync(profession => profession.Id == id && profession.IsDeleted == false);
+            Profession profession = await _professionRepository.GetByIdAsync(profession => profession.Id == id);
 
             if (profession == null) throw new NullReferenceException("profession couldn't be null!");
 

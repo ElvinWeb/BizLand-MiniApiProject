@@ -1,5 +1,8 @@
 ﻿using ApiProject.Business.DTO.PortfolioDtos;
+using ApiProject.Business.DTO.WorkerDtos;
+using ApiProject.Core.Entites;
 using ApiProject.Core.Repositories;
+using ApiProject.Data.Repositories.Implementations;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -30,14 +33,28 @@ namespace ApiProject.Business.Services.Implementations
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<PortfolioUpdateDto>> GetAllAsync()
+        public async Task<IEnumerable<PortfolioGetDto>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            IEnumerable<Portfolio> portfolios = await _portfolioRepository.GetAllAsync(portfolio => portfolio.IsDeleted == false, "Category");
+
+            IEnumerable<PortfolioGetDto> workerGetDtos = portfolios.Select(portfolio => new PortfolioGetDto { Id = portfolio.Id , Category = portfolio.Category.Name , 
+                                                                                                              Client = portfolio.Client , Title = portfolio.Title , 
+                                                                                                              Description = portfolio.Description  , ProjectDate = portfolio.ProjectDate ,
+                                                                                                              ProjectUrl = portfolio.ProjectUrl });
+
+            return workerGetDtos;
         }
 
-        public Task<PortfolioUpdateDto> GetByIdAsync(int id)
+        public async Task<PortfolioGetDto> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            Portfolio portfolio = await _portfolioRepository.GetByIdAsync(portfolio => portfolio.Id == id, "Category");
+
+            if (portfolio == null) throw new NullReferenceException("portfolio couldn't be null!");
+
+            PortfolioGetDto portfolioGetDto = _mapper.Map<PortfolioGetDto>(portfolio);
+            portfolioGetDto.Category = portfolio.Category.Name;
+
+            return portfolioGetDto;
         }
 
         public Task ToggleDelete(int id)

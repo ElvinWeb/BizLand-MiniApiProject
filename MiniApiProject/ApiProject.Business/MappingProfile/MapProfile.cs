@@ -1,4 +1,5 @@
 ﻿using ApiProject.Business.DTO.CategoryDtos;
+using ApiProject.Business.DTO.PortfolioDtos;
 using ApiProject.Business.DTO.ProfessionDtos;
 using ApiProject.Business.DTO.ServiceDtos;
 using ApiProject.Business.DTO.WorkerDtos;
@@ -31,6 +32,10 @@ namespace ApiProject.Business.MappingProfile
             CreateMap<CategoryCreateDto, Category>().ReverseMap();
             CreateMap<CategoryGetDto, Category>().ReverseMap();
             CreateMap<CategoryUpdateDto, Category>().ReverseMap();
+
+            CreateMap<PortfolioCreateDto, Portfolio>().ReverseMap();
+            CreateMap<PortfolioGetDto, Portfolio>().ReverseMap();
+            CreateMap<PortfolioUpdateDto, Portfolio>().ReverseMap();
         }
     }
 }
