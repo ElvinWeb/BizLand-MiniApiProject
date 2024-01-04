@@ -7,6 +7,7 @@ using ApiProject.Core.Repositories;
 using ApiProject.Data.Repositories.Implementations;
 using AutoMapper;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
@@ -24,17 +25,29 @@ namespace ApiProject.Business.Services.Implementations
         private readonly IPortfolioImageRepository _portfolioImage;
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _env;
+        private readonly ICategoryRepository _categoryRepository;
 
-        public PortfolioService(IPortfolioRepository portfolioRepository, IPortfolioImageRepository portfolioImage, IMapper mapper, IWebHostEnvironment env)
+        public PortfolioService(IPortfolioRepository portfolioRepository,
+                                IPortfolioImageRepository portfolioImage,
+                                IMapper mapper,
+                                IWebHostEnvironment env,
+                                ICategoryRepository categoryRepository)
         {
             _portfolioRepository = portfolioRepository;
             _portfolioImage = portfolioImage;
             _mapper = mapper;
             _env = env;
+            _categoryRepository = categoryRepository;
         }
         public async Task CreateAsync([FromForm] PortfolioCreateDto portfolioCreateDto)
         {
+            if (!_categoryRepository.Table.Any(category => category.Id == portfolioCreateDto.CategoryId))
+            {
+                throw new NullReferenceException("category not found!");
+            }
+
             Portfolio portfolio = _mapper.Map<Portfolio>(portfolioCreateDto);
+
 
             if (portfolioCreateDto.PortfolioItemImage != null)
             {
@@ -50,8 +63,8 @@ namespace ApiProject.Business.Services.Implementations
                 }
 
                 string folder = "Uploads/PortfolioImages";
-
                 string newFileName = await Helper.GetFileName(_env.WebRootPath, folder, portfolioCreateDto.PortfolioItemImage);
+
                 PortfolioImage portfolioImage = new PortfolioImage
                 {
                     Portfolio = portfolio,
@@ -68,20 +81,20 @@ namespace ApiProject.Business.Services.Implementations
 
             if (portfolioCreateDto.PortfolioSlideImages != null)
             {
-                foreach (var img in portfolioCreateDto.PortfolioSlideImages)
+                foreach (var portfolioImg in portfolioCreateDto.PortfolioSlideImages)
                 {
 
-                    if (img.ContentType != "image/png" && img.ContentType != "image/jpeg")
+                    if (portfolioImg.ContentType != "image/png" && portfolioImg.ContentType != "image/jpeg")
                     {
                         throw new InvalidImageContentTypeOrSize("enter the correct image ContentType!");
                     }
 
-                    if (img.Length > 1048576)
+                    if (portfolioImg.Length > 1048576)
                     {
                         throw new InvalidImageContentTypeOrSize("image size must be less than 1mb!");
                     }
                     string folder = "Uploads/PortfolioImages";
-                    string newFileName = await Helper.GetFileName(_env.WebRootPath, folder, img);
+                    string newFileName = await Helper.GetFileName(_env.WebRootPath, folder, portfolioImg);
 
                     PortfolioImage portfolioImage = new PortfolioImage
                     {
@@ -100,7 +113,7 @@ namespace ApiProject.Business.Services.Implementations
 
         public async Task DeleteAsync(int id)
         {
-            Portfolio portfolio = await _portfolioRepository.GetByIdAsync(portfolio => portfolio.Id == id, "PortfolioImage");
+            Portfolio portfolio = await _portfolioRepository.GetByIdAsync(portfolio => portfolio.Id == id, "Images");
 
             if (portfolio == null) throw new NullReferenceException("portfolio couldn't be null!");
 
@@ -177,9 +190,13 @@ namespace ApiProject.Business.Services.Implementations
 
             if (portfolio == null) throw new NullReferenceException("portfolio couldn't be null!");
 
+            if (!_categoryRepository.Table.Any(category => category.Id == portfolioUpdateDto.CategoryId))
+            {
+                throw new NullReferenceException("category not found!");
+            }
+
             if (portfolioUpdateDto.PortfolioItemImage != null)
             {
-                portfolio.Images.RemoveAll(pi => !portfolio.PortfolioImageIds.Contains(pi.Id) && pi.IsPoster == true);
                 if (portfolioUpdateDto.PortfolioItemImage.ContentType != "image/png" && portfolioUpdateDto.PortfolioItemImage.ContentType != "image/jpeg")
                 {
                     throw new InvalidImageContentTypeOrSize("enter the correct image ContentType!");
@@ -207,15 +224,13 @@ namespace ApiProject.Business.Services.Implementations
                     IsPoster = true,
                 };
 
-                await _portfolioImage.CreateAsync(portfolioImage);
+                portfolio.Images.Add(portfolioImage);
             }
-
 
             if (portfolioUpdateDto.PortfolioSlideImages != null)
             {
                 foreach (var img in portfolioUpdateDto.PortfolioSlideImages)
                 {
-                    portfolio.Images.RemoveAll(pi => !portfolio.PortfolioImageIds.Contains(pi.Id) && pi.IsPoster == false);
 
                     if (img.ContentType != "image/png" && img.ContentType != "image/jpeg")
                     {
@@ -249,7 +264,7 @@ namespace ApiProject.Business.Services.Implementations
                         IsPoster = false,
                     };
 
-                    await _portfolioImage.CreateAsync(portfolioImage);
+                    portfolio.Images.Add(portfolioImage);
                 }
             }
 

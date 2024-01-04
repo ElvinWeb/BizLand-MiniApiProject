@@ -5,8 +5,12 @@ using ApiProject.Core.Entites;
 using ApiProject.Core.Repositories;
 using ApiProject.Data.DataAccessLayer;
 using ApiProject.Data.Repositories.Implementations;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,9 +23,6 @@ builder.Services.AddDbContext<ProjectDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("myDb2"));
 });
 builder.Services.AddAutoMapper(typeof(MapProfile));
-
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IFeatureRepository, FeatureRepository>();
 builder.Services.AddScoped<IFeatureService, FeatureService>();
@@ -40,6 +41,8 @@ builder.Services.AddScoped<IPortfolioService, PortfolioService>();
 
 builder.Services.AddScoped<IPortfolioImageRepository, PortfolioImageRepository>();
 
+builder.Services.AddScoped<IAccountService, AccountService>();
+
 builder.Services.AddIdentity<User, IdentityRole>(opt =>
 {
     opt.Password.RequiredUniqueChars = 0;
@@ -51,6 +54,59 @@ builder.Services.AddIdentity<User, IdentityRole>(opt =>
 
     opt.User.RequireUniqueEmail = false;
 }).AddEntityFrameworkStores<ProjectDbContext>().AddDefaultTokenProviders();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+}).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+
+        ValidIssuer = builder.Configuration.GetSection("JWT:Issuer").Value,
+        ValidAudience = builder.Configuration.GetSection("JWT:Audience").Value,
+        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration.GetSection("JWT:Key").Value)),
+        LifetimeValidator = (_, expires, token, _) => token is not null ? expires > DateTime.UtcNow : false,
+    };
+});
+builder.Services.AddAuthorization();
+
+builder.Services.AddSwaggerGen(opt =>
+{
+    opt.SwaggerDoc("v1", new OpenApiInfo { Title = "MyAPI", Version = "v1" });
+    opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Please enter token",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "bearer"
+    });
+
+    opt.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type=ReferenceType.SecurityScheme,
+                    Id="Bearer"
+                }
+            },
+            new string[]{}
+        }
+    });
+});
+
 
 var app = builder.Build();
 

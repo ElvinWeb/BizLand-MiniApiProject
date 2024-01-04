@@ -1,11 +1,11 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\3afb68ca-3485-4059-a191-bf2e37a5e714portfolio-3.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\70f5300e-52d2-45fd-9226-3efd035e6629portfolio-4.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>ApiProject</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/ApiProject</BasePath>
-      <RelativePath>Uploads/PortfolioImages/3afb68ca-3485-4059-a191-bf2e37a5e714portfolio-3.jpg</RelativePath>
+      <RelativePath>Uploads/PortfolioImages/70f5300e-52d2-45fd-9226-3efd035e6629portfolio-4.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -14,14 +14,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\3afb68ca-3485-4059-a191-bf2e37a5e714portfolio-3.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\70f5300e-52d2-45fd-9226-3efd035e6629portfolio-4.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\5d23a467-b6ed-4d19-afad-77de44596191portfolio-2.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\90d24e90-1f38-4850-8456-d6355332f11aportfolio-4.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>ApiProject</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/ApiProject</BasePath>
-      <RelativePath>Uploads/PortfolioImages/5d23a467-b6ed-4d19-afad-77de44596191portfolio-2.jpg</RelativePath>
+      <RelativePath>Uploads/PortfolioImages/90d24e90-1f38-4850-8456-d6355332f11aportfolio-4.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -30,14 +30,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\5d23a467-b6ed-4d19-afad-77de44596191portfolio-2.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\90d24e90-1f38-4850-8456-d6355332f11aportfolio-4.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\620813f1-b454-465d-8b08-5430b1f42e08portfolio-5.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\bf45efdb-286f-49a1-9d5a-f3dc739cafceportfolio-5.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>ApiProject</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/ApiProject</BasePath>
-      <RelativePath>Uploads/PortfolioImages/620813f1-b454-465d-8b08-5430b1f42e08portfolio-5.jpg</RelativePath>
+      <RelativePath>Uploads/PortfolioImages/bf45efdb-286f-49a1-9d5a-f3dc739cafceportfolio-5.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -46,14 +46,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\620813f1-b454-465d-8b08-5430b1f42e08portfolio-5.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\bf45efdb-286f-49a1-9d5a-f3dc739cafceportfolio-5.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\6374faa8-5de5-426f-9aa8-1c4f66d7b0ffportfolio-details-3.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\cc19a93e-bdfc-479d-b54d-e7e0c94890c2portfolio-9.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>ApiProject</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/ApiProject</BasePath>
-      <RelativePath>Uploads/PortfolioImages/6374faa8-5de5-426f-9aa8-1c4f66d7b0ffportfolio-details-3.jpg</RelativePath>
+      <RelativePath>Uploads/PortfolioImages/cc19a93e-bdfc-479d-b54d-e7e0c94890c2portfolio-9.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -62,55 +62,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\6374faa8-5de5-426f-9aa8-1c4f66d7b0ffportfolio-details-3.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\6e4c09f8-31d8-4fe5-80c4-f8209c7b137aportfolio-3.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>ApiProject</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/ApiProject</BasePath>
-      <RelativePath>Uploads/PortfolioImages/6e4c09f8-31d8-4fe5-80c4-f8209c7b137aportfolio-3.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\6e4c09f8-31d8-4fe5-80c4-f8209c7b137aportfolio-3.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\f3c98b49-364e-4144-8794-6d8f38c66cc5portfolio-details-2.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>ApiProject</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/ApiProject</BasePath>
-      <RelativePath>Uploads/PortfolioImages/f3c98b49-364e-4144-8794-6d8f38c66cc5portfolio-details-2.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\f3c98b49-364e-4144-8794-6d8f38c66cc5portfolio-details-2.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\f7590b54-f6c8-4ae8-bd5c-7cc190de2a17portfolio-details-2.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>ApiProject</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/ApiProject</BasePath>
-      <RelativePath>Uploads/PortfolioImages/f7590b54-f6c8-4ae8-bd5c-7cc190de2a17portfolio-details-2.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\f7590b54-f6c8-4ae8-bd5c-7cc190de2a17portfolio-details-2.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\PortfolioImages\cc19a93e-bdfc-479d-b54d-e7e0c94890c2portfolio-9.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\WorkerImages\1b241795-5803-4c2f-8460-6bcce9d9a01bteam-2.jpg))">
       <SourceType>Package</SourceType>

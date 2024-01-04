@@ -3,6 +3,7 @@ using ApiProject.Business.DTO.ServiceDtos;
 using ApiProject.Business.Services;
 using ApiProject.Business.Services.Implementations;
 using ApiProject.Core.Entites;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -50,6 +51,7 @@ namespace ApiProject.Controllers
             return Ok(professionGetDtos);
         }
         [HttpPost("")]
+        [Authorize(Roles = "User")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> Create([FromForm] ProfessionCreateDto professionCreateDto)
         {
@@ -78,6 +80,7 @@ namespace ApiProject.Controllers
             return NoContent();
         }
         [HttpDelete("/professions/Delete/{id}")]
+        [Authorize(Roles = "SuperAdmin")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> Delete(int id)
