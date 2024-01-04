@@ -1,6 +1,7 @@
 ﻿using ApiProject.Business.DTO.CategoryDtos;
 using ApiProject.Business.DTO.ProfessionDtos;
 using ApiProject.Business.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -47,6 +48,7 @@ namespace ApiProject.Controllers
             return Ok(categoryGetDtos);
         }
         [HttpPost("")]
+        [Authorize(Roles = "SuperAdmin,Admin")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> Create([FromForm] CategoryCreateDto categoryCreateDto)
         {
@@ -55,6 +57,7 @@ namespace ApiProject.Controllers
             return StatusCode(201, new { message = "Object yaradildi" });
         }
         [HttpPut("")]
+        [Authorize(Roles = "SuperAdmin,Admin")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> Update([FromForm] CategoryUpdateDto categoryUpdateDto)
@@ -75,6 +78,7 @@ namespace ApiProject.Controllers
             return NoContent();
         }
         [HttpDelete("/categories/Delete/{id}")]
+        [Authorize(Roles = "SuperAdmin")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> Delete(int id)
@@ -93,6 +97,7 @@ namespace ApiProject.Controllers
             return NoContent();
         }
         [HttpPatch("/categories/ToggleDelete/{id}")]
+        [Authorize(Roles = "SuperAdmin,Admin")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> ToggleDelete(int id)

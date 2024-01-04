@@ -4,6 +4,7 @@ using ApiProject.Business.DTO.WorkerDtos;
 using ApiProject.Business.Services;
 using ApiProject.Business.Services.Implementations;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -50,6 +51,7 @@ namespace ApiProject.Controllers
             return Ok(portfolioGetDtos);
         }
         [HttpPost("")]
+        [Authorize(Roles = "SuperAdmin,Admin")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> Create([FromForm] PortfolioCreateDto portfolioCreateDto)
         {
@@ -70,6 +72,7 @@ namespace ApiProject.Controllers
         }
 
         [HttpPut("")]
+        [Authorize(Roles = "SuperAdmin,Admin")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> Update([FromForm] PortfolioUpdateDto portfolioUpdateDto)
@@ -93,6 +96,7 @@ namespace ApiProject.Controllers
             return NoContent();
         }
         [HttpDelete("/portfolios/Delete/{id}")]
+        [Authorize(Roles = "SuperAdmin")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> Delete(int id)
@@ -112,6 +116,7 @@ namespace ApiProject.Controllers
             return NoContent();
         }
         [HttpPatch("/portfolios/ToggleDelete/{id}")]
+        [Authorize(Roles = "SuperAdmin,Admin")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> ToggleDelete(int id)

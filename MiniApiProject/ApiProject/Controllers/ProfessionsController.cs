@@ -51,7 +51,7 @@ namespace ApiProject.Controllers
             return Ok(professionGetDtos);
         }
         [HttpPost("")]
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "SuperAdmin,Admin")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> Create([FromForm] ProfessionCreateDto professionCreateDto)
         {
@@ -60,6 +60,7 @@ namespace ApiProject.Controllers
             return StatusCode(201, new { message = "Object yaradildi" });
         }
         [HttpPut("")]
+        [Authorize(Roles = "SuperAdmin,Admin")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> Update([FromForm] ProfessionUpdateDto professionUpdateDto)
@@ -74,9 +75,6 @@ namespace ApiProject.Controllers
             {
                 return NotFound(ex.Message);
             }
-
-
-
             return NoContent();
         }
         [HttpDelete("/professions/Delete/{id}")]
@@ -99,6 +97,7 @@ namespace ApiProject.Controllers
             return NoContent();
         }
         [HttpPatch("/professions/ToggleDelete/{id}")]
+        [Authorize(Roles = "SuperAdmin,Admin")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> ToggleDelete(int id)

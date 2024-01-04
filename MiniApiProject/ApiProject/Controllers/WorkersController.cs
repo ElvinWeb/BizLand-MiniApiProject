@@ -3,6 +3,7 @@ using ApiProject.Business.DTO.ServiceDtos;
 using ApiProject.Business.DTO.WorkerDtos;
 using ApiProject.Business.Services;
 using ApiProject.Business.Services.Implementations;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +21,7 @@ namespace ApiProject.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "User")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> Get(int id)
@@ -41,6 +43,7 @@ namespace ApiProject.Controllers
         }
 
         [HttpGet("")]
+        [Authorize(Roles = "User")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAll()
         {
@@ -49,6 +52,7 @@ namespace ApiProject.Controllers
             return Ok(workerGetDtos);
         }
         [HttpPost("")]
+        [Authorize(Roles = "SuperAdmin,Admin")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> Create([FromForm] WorkerCreateDto workerCreateDto)
         {
@@ -69,6 +73,7 @@ namespace ApiProject.Controllers
             return StatusCode(201, new { message = "Object yaradildi" });
         }
         [HttpPut("")]
+        [Authorize(Roles = "SuperAdmin,Admin")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> Update([FromForm] WorkerUpdateDto workerUpdateDto)
@@ -92,6 +97,7 @@ namespace ApiProject.Controllers
             return NoContent();
         }
         [HttpDelete("/workers/Delete/{id}")]
+        [Authorize(Roles = "SuperAdmin")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> Delete(int id)
@@ -111,6 +117,7 @@ namespace ApiProject.Controllers
             return NoContent();
         }
         [HttpPatch("/workers/ToggleDelete/{id}")]
+        [Authorize(Roles = "SuperAdmin,Admin")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> ToggleDelete(int id)

@@ -23,18 +23,18 @@ namespace ApiProject.Business.DTO.AccountDtos
                .NotEmpty().WithMessage("Bos ola bilmez!")
                .NotNull().WithMessage("Null ola bilmez!")
                .MaximumLength(30).WithMessage("Max 30 ola biler!")
-               .MinimumLength(5).WithMessage("Min 5 ola biler!");
+               .MinimumLength(6).WithMessage("Min 6 ola biler!");
 
             RuleFor(user => user.UserName)
              .NotEmpty().WithMessage("Bos ola bilmez!")
              .NotNull().WithMessage("Null ola bilmez!")
              .MaximumLength(30).WithMessage("Max 30 ola biler!")
-             .MinimumLength(5).WithMessage("Min 5 ola biler!");
+             .MinimumLength(3).WithMessage("Min 3 ola biler!");
 
             RuleFor(user => user.Email)
             .NotEmpty().WithMessage("Bos ola bilmez!")
             .NotNull().WithMessage("Null ola bilmez!")
-            .MaximumLength(50).WithMessage("Max 50 ola biler!")
+            .MaximumLength(30).WithMessage("Max 30 ola biler!")
             .MinimumLength(10).WithMessage("Min 10 ola biler!");
 
             RuleFor(user => user.Password)
