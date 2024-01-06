@@ -18,6 +18,7 @@ namespace ApiProject.Core.Configurations
             builder.Property(prop => prop.Client).IsRequired().HasMaxLength(30);
             builder.Property(prop => prop.ProjectUrl).IsRequired().HasMaxLength(50);
             builder.Property(prop => prop.ProjectDate).IsRequired().HasMaxLength(20);
+            builder.HasOne(prop => prop.Category).WithMany(prop => prop.Portfolios);
         }
     }
 }

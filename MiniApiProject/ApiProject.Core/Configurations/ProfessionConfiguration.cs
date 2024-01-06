@@ -13,7 +13,8 @@ namespace ApiProject.Core.Configurations
     {
         public void Configure(EntityTypeBuilder<Profession> builder)
         {
-            builder.Property(prop => prop.Name).IsRequired().HasMaxLength(30);  
+            builder.Property(prop => prop.Name).IsRequired().HasMaxLength(30);
+          
         }
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qT4qfFYsSUm8w6AFj1SRJgIZe6r2xHDkbQdXUdAAUD8=",
+  "Hash": "DbuORwXG0mI5rpiIKeZeXQFaMU883+ehclclIuFyDe8=",
   "Source": "ApiProject",
   "BasePath": "_content/ApiProject",
   "Mode": "Default",
@@ -51,12 +51,12 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\PortfolioImages\\90d24e90-1f38-4850-8456-d6355332f11aportfolio-4.jpg"
     },
     {
-      "Identity": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject\\wwwroot\\Uploads\\PortfolioImages\\bf45efdb-286f-49a1-9d5a-f3dc739cafceportfolio-5.jpg",
+      "Identity": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject\\wwwroot\\Uploads\\PortfolioImages\\ab350b1a-c151-4f69-b8f9-79976fe17645portfolio-2.jpg",
       "SourceId": "ApiProject",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject\\wwwroot\\",
       "BasePath": "_content/ApiProject",
-      "RelativePath": "Uploads/PortfolioImages/bf45efdb-286f-49a1-9d5a-f3dc739cafceportfolio-5.jpg",
+      "RelativePath": "Uploads/PortfolioImages/ab350b1a-c151-4f69-b8f9-79976fe17645portfolio-2.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -65,15 +65,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\PortfolioImages\\bf45efdb-286f-49a1-9d5a-f3dc739cafceportfolio-5.jpg"
+      "OriginalItemSpec": "wwwroot\\Uploads\\PortfolioImages\\ab350b1a-c151-4f69-b8f9-79976fe17645portfolio-2.jpg"
     },
     {
-      "Identity": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject\\wwwroot\\Uploads\\PortfolioImages\\cc19a93e-bdfc-479d-b54d-e7e0c94890c2portfolio-9.jpg",
+      "Identity": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject\\wwwroot\\Uploads\\PortfolioImages\\c7da0c9b-e4c5-466e-8265-134bc3a7ac5bportfolio-8.jpg",
       "SourceId": "ApiProject",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject\\wwwroot\\",
       "BasePath": "_content/ApiProject",
-      "RelativePath": "Uploads/PortfolioImages/cc19a93e-bdfc-479d-b54d-e7e0c94890c2portfolio-9.jpg",
+      "RelativePath": "Uploads/PortfolioImages/c7da0c9b-e4c5-466e-8265-134bc3a7ac5bportfolio-8.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -82,7 +82,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\PortfolioImages\\cc19a93e-bdfc-479d-b54d-e7e0c94890c2portfolio-9.jpg"
+      "OriginalItemSpec": "wwwroot\\Uploads\\PortfolioImages\\c7da0c9b-e4c5-466e-8265-134bc3a7ac5bportfolio-8.jpg"
     },
     {
       "Identity": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject\\wwwroot\\Uploads\\WorkerImages\\1b241795-5803-4c2f-8460-6bcce9d9a01bteam-2.jpg",

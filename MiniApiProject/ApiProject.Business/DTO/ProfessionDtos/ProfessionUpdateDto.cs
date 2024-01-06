@@ -22,6 +22,12 @@ namespace ApiProject.Business.DTO.ProfessionDtos
                .NotNull().WithMessage("Null ola bilmez!")
                .MaximumLength(30).WithMessage("Max 30 ola biler!")
                .MinimumLength(3).WithMessage("Min 3 ola biler!");
+
+
+            RuleFor(profession => profession.Id)
+               .NotEmpty().WithMessage("Bos ola bilmez!")
+               .NotNull().WithMessage("Null ola bilmez!")
+               .GreaterThanOrEqualTo(1).WithMessage("Id menfi deyer ola bilmez!");
         }
     }
 }

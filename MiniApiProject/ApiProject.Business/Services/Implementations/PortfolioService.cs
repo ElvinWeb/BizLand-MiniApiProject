@@ -197,6 +197,8 @@ namespace ApiProject.Business.Services.Implementations
 
             if (portfolioUpdateDto.PortfolioItemImage != null)
             {
+                portfolio.Images.RemoveAll(pi => !portfolioUpdateDto.PortfolioImageIds.Contains(pi.Id) && pi.IsPoster == true);
+
                 if (portfolioUpdateDto.PortfolioItemImage.ContentType != "image/png" && portfolioUpdateDto.PortfolioItemImage.ContentType != "image/jpeg")
                 {
                     throw new InvalidImageContentTypeOrSize("enter the correct image ContentType!");
@@ -227,8 +229,11 @@ namespace ApiProject.Business.Services.Implementations
                 portfolio.Images.Add(portfolioImage);
             }
 
+
             if (portfolioUpdateDto.PortfolioSlideImages != null)
             {
+                portfolio.Images.RemoveAll(pi => !portfolioUpdateDto.PortfolioImageIds.Contains(pi.Id) && pi.IsPoster == false);
+
                 foreach (var img in portfolioUpdateDto.PortfolioSlideImages)
                 {
 

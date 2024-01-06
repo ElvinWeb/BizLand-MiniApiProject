@@ -25,7 +25,7 @@ namespace ApiProject.Business.DTO.WorkerDtos
                .NotEmpty().WithMessage("Bos ola bilmez!")
                .NotNull().WithMessage("Null ola bilmez!")
                .MaximumLength(30).WithMessage("Max 30 ola biler!")
-               .MinimumLength(6).WithMessage("Min 3 ola biler!");
+               .MinimumLength(6).WithMessage("Min 6 ola biler!");
 
             RuleFor(worker => worker.MediaUrl)
               .NotEmpty().WithMessage("Bos ola bilmez!")
@@ -35,7 +35,8 @@ namespace ApiProject.Business.DTO.WorkerDtos
 
             RuleFor(worker => worker.ProfessionId)
                 .NotEmpty().WithMessage("Bos ola bilmez!")
-                .NotNull().WithMessage("Null ola bilmez!");
+                .NotNull().WithMessage("Null ola bilmez!")
+                .GreaterThanOrEqualTo(1).WithMessage("Id menfi deyer ola bilmez!");
 
             RuleFor(worker => worker.ImgFile)
               .NotEmpty().WithMessage("Bos ola bilmez!")

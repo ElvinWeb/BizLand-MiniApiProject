@@ -14,6 +14,7 @@ namespace ApiProject.Core.Configurations
         public void Configure(EntityTypeBuilder<PortfolioImage> builder)
         {
             builder.Property(prop => prop.ImgUrl).IsRequired().HasMaxLength(100);
+            builder.HasOne(prop => prop.Portfolio).WithMany(prop => prop.Images);
         }
     }
 }

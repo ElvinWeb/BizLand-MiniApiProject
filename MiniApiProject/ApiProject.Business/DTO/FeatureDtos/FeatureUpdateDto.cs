@@ -18,6 +18,12 @@ namespace ApiProject.Business.DTO.ServiceDtos
     {
         public FeatureUpdateDtoValidator()
         {
+
+            RuleFor(feature => feature.Id)
+              .NotEmpty().WithMessage("Bos ola bilmez!")
+              .NotNull().WithMessage("Null ola bilmez!")
+              .GreaterThanOrEqualTo(1).WithMessage("Id menfi deyer ola bilmez!");
+
             RuleFor(feature => feature.Title)
                .NotEmpty().WithMessage("Bos ola bilmez!")
                .NotNull().WithMessage("Null ola bilmez!")
@@ -35,6 +41,8 @@ namespace ApiProject.Business.DTO.ServiceDtos
               .NotNull().WithMessage("Null ola bilmez!")
               .MaximumLength(20).WithMessage("Max 20 ola biler!")
               .MinimumLength(6).WithMessage("Min 6 ola biler!");
+
+
 
         }
     }

@@ -16,6 +16,7 @@ namespace ApiProject.Core.Configurations
             builder.Property(prop => prop.FullName).IsRequired().HasMaxLength(30);
             builder.Property(prop => prop.MediaUrl).IsRequired().HasMaxLength(50);
             builder.Property(prop => prop.ImgUrl).IsRequired().HasMaxLength(100);
+            builder.HasOne(prop => prop.Profession).WithMany(prop => prop.Workers);
         }
     }
 }

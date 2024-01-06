@@ -17,6 +17,12 @@ namespace ApiProject.Business.DTO.CategoryDtos
     {
         public CategoryUpdateDtoValidator()
         {
+
+            RuleFor(category => category.Id)
+              .NotEmpty().WithMessage("Bos ola bilmez!")
+              .NotNull().WithMessage("Null ola bilmez!")
+              .GreaterThanOrEqualTo(1).WithMessage("Id menfi ola bilmez!");
+
             RuleFor(category => category.Name)
                .NotEmpty().WithMessage("Bos ola bilmez!")
                .NotNull().WithMessage("Null ola bilmez!")
