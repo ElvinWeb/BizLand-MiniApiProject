@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="DbFile\" />
     <Folder Include="wwwroot\Uploads\PortfolioImages\" />
     <Folder Include="wwwroot\Uploads\WorkerImages\" />
   </ItemGroup>

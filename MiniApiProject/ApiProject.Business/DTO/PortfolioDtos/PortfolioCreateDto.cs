@@ -19,7 +19,6 @@ namespace ApiProject.Business.DTO.PortfolioDtos
         public string Client { get; set; }
         public string ProjectDate { get; set; }
         public int CategoryId { get; set; }
-        public List<int>? PortfolioImageIds { get; set; }
         public List<IFormFile> PortfolioSlideImages { get; set; }
         public IFormFile PortfolioItemImage { get; set; }
     }
@@ -60,7 +59,8 @@ namespace ApiProject.Business.DTO.PortfolioDtos
 
             RuleFor(portfolio => portfolio.CategoryId)
              .NotEmpty().WithMessage("Bos ola bilmez!")
-             .NotNull().WithMessage("Null ola bilmez!");
+             .NotNull().WithMessage("Null ola bilmez!")
+             .GreaterThanOrEqualTo(1).WithMessage("Id deyeri menfi ola bilmez!");
 
 
             RuleFor(portfolio => portfolio.PortfolioItemImage)
