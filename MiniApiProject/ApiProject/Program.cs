@@ -1,3 +1,4 @@
+using ApiProject.Business.DTO.CategoryDtos;
 using ApiProject.Business.MappingProfile;
 using ApiProject.Business.Services;
 using ApiProject.Business.Services.Implementations;
@@ -5,10 +6,10 @@ using ApiProject.Core.Entites;
 using ApiProject.Core.Repositories;
 using ApiProject.Data.DataAccessLayer;
 using ApiProject.Data.Repositories.Implementations;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
@@ -17,7 +18,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddFluentValidation(options =>
+{
+    options.RegisterValidatorsFromAssembly(typeof(CategoryCreateDtoValidator).Assembly);
+});
+;
 builder.Services.AddDbContext<ProjectDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("myDb2"));

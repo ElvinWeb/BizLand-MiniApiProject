@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9b+/QVe8QLOgnLHt52sEkSkSuuBO9agsu7kx2Q/fbrANikKcztyZyhlzOqTLUGp5okMw6UlXZ46b3QLJ2RlOiQ==",
+  "dgSpecHash": "hmxYMeDPbfxj2cA5J3skSh32FKXHXb5p4+YnQqYeXqq3eM8/CPEAgt7e291NDBQ+C8qTlsZHiEiuOQGv19rHUw==",
   "success": true,
   "projectFilePath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BizLandApi\\MiniApiProject\\ApiProject\\ApiProject.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "C:\\Users\\elvin\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\elvin\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\elvin\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\elvin\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\elvin\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\elvin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\elvin\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\elvin\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
