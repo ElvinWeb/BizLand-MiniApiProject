@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\BizLand.UI.props" />
+</Project>

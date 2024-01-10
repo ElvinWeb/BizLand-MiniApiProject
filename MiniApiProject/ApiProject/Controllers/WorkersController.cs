@@ -21,7 +21,6 @@ namespace ApiProject.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "User")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> Get(int id)
@@ -43,7 +42,6 @@ namespace ApiProject.Controllers
         }
 
         [HttpGet("")]
-        [Authorize(Roles = "User")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAll()
         {

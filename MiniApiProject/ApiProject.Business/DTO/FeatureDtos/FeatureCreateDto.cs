@@ -34,8 +34,8 @@ namespace ApiProject.Business.DTO.ServiceDtos
             RuleFor(feature => feature.Icon)
               .NotEmpty().WithMessage("Bos ola bilmez!")
               .NotNull().WithMessage("Null ola bilmez!")
-              .MaximumLength(20).WithMessage("Max 20 ola biler!")
-              .MinimumLength(6).WithMessage("Min 6 ola biler!");
+              .MaximumLength(30).WithMessage("Max 30 ola biler!")
+              .MinimumLength(10).WithMessage("Min 10 ola biler!");
 
         }
     }

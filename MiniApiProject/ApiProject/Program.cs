@@ -22,12 +22,20 @@ builder.Services.AddControllers().AddFluentValidation(options =>
 {
     options.RegisterValidatorsFromAssembly(typeof(CategoryCreateDtoValidator).Assembly);
 });
-;
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.WithOrigins("https://localhost:7185");
+        });
+});
 builder.Services.AddDbContext<ProjectDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("myDb2"));
 });
 builder.Services.AddAutoMapper(typeof(MapProfile));
+
 
 builder.Services.AddScoped<IFeatureRepository, FeatureRepository>();
 builder.Services.AddScoped<IFeatureService, FeatureService>();
@@ -125,6 +133,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseCors();
 
 app.MapControllers();
 
